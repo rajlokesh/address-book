@@ -7,22 +7,22 @@ Documentation : http://localhost:8000/swagger-ui.html
 Also find postman collection.JSON in root folder, which you can import to try out the endpoints 
 
 Organization:
-id * PK
-Name * unique
-Address
-Phone
+<br />id * PK
+<br />Name * unique
+<br />Address
+<br />Phone
 
 User:
-id * PK
-First Name
-Last Name
-Email * unique
-Address
-Phone
+<br />id * PK
+<br />First Name
+<br />Last Name
+<br />Email * unique
+<br />Address
+<br />Phone
 
 Assosication [unique(userId, Organization)]  junction table
-id * PK
-userId *FK
-organizationId  *FK
+<br />id * PK
+<br />userId *FK
+<br />organizationId  *FK
 
 
