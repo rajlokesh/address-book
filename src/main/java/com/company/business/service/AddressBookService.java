@@ -75,7 +75,7 @@ public class AddressBookService {
         long userId = this.userRepository.findByEmail(
                 associationDTO.getUserEmail()).get(0).getUserId();
         Optional<Association> associationList = this.associationRepository.findByOrganizationIdAndUserId(orgId, userId);
-        associationList.ifPresent(association ->  this.associationRepository.delete(association));
+        associationList.ifPresent(this.associationRepository::delete);
         return associationDTO;
     }
 

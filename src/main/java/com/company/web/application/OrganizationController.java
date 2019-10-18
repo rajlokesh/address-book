@@ -3,7 +3,6 @@ package com.company.web.application;
 import com.company.business.dto.OrganizationDTO;
 import com.company.business.service.AddressBookService;
 import com.company.data.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +11,13 @@ import java.util.List;
 @RequestMapping(value = "/v1/organization")
 public class OrganizationController {
 
-    @Autowired
-    private AddressBookService addressBookService;
+
+    private final AddressBookService addressBookService;
+
+    public OrganizationController(AddressBookService addressBookService) {
+        this.addressBookService = addressBookService;
+    }
+
 
     @GetMapping
     public List<OrganizationDTO> getOrganizations() {

@@ -5,7 +5,6 @@ import com.company.business.dto.OrganizationNameDTO;
 import com.company.business.dto.UserDTO;
 import com.company.business.service.AddressBookService;
 import com.company.data.entity.Organization;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +13,12 @@ import java.util.List;
 @RequestMapping(value = "/v1/user")
 public class UserController {
 
-    @Autowired
-    private AddressBookService addressBookService;
+
+    private final AddressBookService addressBookService;
+
+    public UserController(AddressBookService addressBookService) {
+        this.addressBookService = addressBookService;
+    }
 
     @GetMapping
     public List<UserDTO> getUsers() {
